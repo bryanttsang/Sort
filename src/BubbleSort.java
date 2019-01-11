@@ -3,30 +3,30 @@ public class BubbleSort
     public static void main(String args[])
     {
         //create random array
-        int[] initialArray = SortingUtil.randIntArr(99999);
-        int[] finalArray = initialArray;
+        int[] array = SortingUtil.randIntArr(99999);
+        int[] copy = SortingUtil.copyIntArray(array);
 
         //print initial array
         System.out.println("Before: ");
-        for (int num:initialArray)
+        for (int num:array)
             System.out.println(num + " ");
         System.out.println();
 
-        //sort with bubble sort
+        //sort with selection sort
         long time = System.nanoTime();
-        SortingUtil.bubbleSort(finalArray);
+        SortingUtil.bubbleSort(copy);
         time = System.nanoTime() - time;
 
         //print final array
         System.out.println("After: ");
-        for (int num:finalArray)
+        for (int num:copy)
             System.out.println(num + " ");
         System.out.println();
 
         //check and print
         System.out.println("Bubble Sort");
-        System.out.println("checkSum: " + SortingUtil.checkSum(initialArray, finalArray));
-        System.out.println("isSorted: " + SortingUtil.isSorted(finalArray));
+        System.out.println("checkSum: " + SortingUtil.checkSum(array, copy));
+        System.out.println("isSorted: " + SortingUtil.isSorted(copy));
         System.out.println("Time taken: " + time + " nanoseconds");
     }
 }

@@ -1,9 +1,9 @@
-public class SelectionSort
+public class InsertionSort
 {
     public static void main(String args[])
     {
         //create random array
-        int[] array = SortingUtil.randIntArr(99999);
+        int[] array = SortingUtil.randIntArr(999999);
         int[] copy = SortingUtil.copyIntArray(array);
 
         //print initial array
@@ -14,7 +14,7 @@ public class SelectionSort
 
         //sort with selection sort
         long time = System.nanoTime();
-        SortingUtil.selectionSort(copy);
+        SortingUtil.insertionSort(copy);
         time = System.nanoTime() - time;
 
         //print final array
@@ -24,7 +24,7 @@ public class SelectionSort
         System.out.println();
 
         //check and print
-        System.out.println("Selection Sort");
+        System.out.println("Insertion Sort");
         System.out.println("checkSum: " + SortingUtil.checkSum(array, copy));
         System.out.println("isSorted: " + SortingUtil.isSorted(copy));
         System.out.println("Time taken: " + time + " nanoseconds");
