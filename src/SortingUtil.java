@@ -94,18 +94,18 @@ public class SortingUtil
         return true;
     }
 
-    public static boolean checkSum(int[] initialArray, int[] finalArray)
+    public static boolean checkSum(int[] array, int[] copy)
     {
-        if (initialArray.length != finalArray.length)
+        if (array.length != copy.length)
         {
             return false;
         }
         int initialSum = 0;
         int finalSum = 0;
-        for (int i = 0; i < initialArray.length; i++)
+        for (int i = 0; i < array.length; i++)
         {
-            initialSum += initialArray[i];
-            finalSum += finalArray[i];
+            initialSum += array[i];
+            finalSum += copy[i];
         }
         if (initialSum == finalSum)
         {
