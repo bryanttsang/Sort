@@ -113,4 +113,19 @@ public class SortingUtil
         }
         return false;
     }
+
+    public static int binarySearch(int num, int[] array)
+    {
+        int index;
+        int min = 0;
+        int max = array.length - 1;
+        while (min != max)
+        {
+            index = (min + max) / 2;
+            if (num < array[index]) { max = index - 1; }
+            if (num > array[index]) { min = index + 1; }
+            if (num == array[index]) { return index; }
+        }
+        return -1;
+    }
 }
